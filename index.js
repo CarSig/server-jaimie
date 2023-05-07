@@ -90,5 +90,9 @@ server.listen(PORT, () => {
 
 
 const chatRoutes = require('./routes/chat.routes');
+app.get('/', (req, res) => {
+    res.send('it works!')
+})
+
 app.use('/api/chats', chatRoutes);
 
