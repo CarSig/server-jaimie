@@ -1,5 +1,6 @@
 // npm i socket.io express cors nodemon
 
+require('dotenv').config()
 
 const express = require('express');
 const app = express();
@@ -8,12 +9,14 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+
+
 app.use(cors());
 
 app.use(express.json());
 
 
-const MONGO_URI = 'mongodb+srv://lovroboric:jaimie@jaimieinsyt.b49e0uz.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI = process.env.MONGODB_URI
 const PORT = process.env.PORT || 3001;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
 
